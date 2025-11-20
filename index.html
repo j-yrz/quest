@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mau Jadi Pacarku?</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 80px;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    .btn {
+      padding: 12px 20px;
+      font-size: 18px;
+      margin: 10px;
+      position: absolute;
+      transition: 0.2s;
+    }
+    #iya {
+      left: 50%;
+      top: 220px;
+      transform: translateX(-120%);
+    }
+    #tidak {
+      left: 50%;
+      top: 220px;
+      transform: translateX(20%);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Kamu mau jadi pacarku? 😏❤️</h1>
+
+  <button id="iya" class="btn">Iya</button>
+  <button id="tidak" class="btn">Tidak</button>
+
+  <script>
+    const tidak = document.getElementById("tidak");
+
+    function randomPos() {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      tidak.style.left = x + "px";
+      tidak.style.top = y + "px";
+    }
+
+    // Kabur saat diarahkan mouse (PC)
+    tidak.addEventListener("mouseover", randomPos);
+
+    // Kabur saat diklik (HP)
+    tidak.addEventListener("touchstart", randomPos);
+
+    document.getElementById("iya").onclick = () => {
+      alert("Yeay! Sekarang kamu resmi jadi pacarku 😏❤️");
+    };
+  </script>
+
+</body>
+</html>
